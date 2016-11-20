@@ -6,6 +6,6 @@ type Coord struct {
 }
 type GamePiece struct {
 	Icon    string
-	pos     Coord
-	isWhite bool
+	Pos     Coord
+	IsWhite bool
 }

@@ -3,19 +3,19 @@ package main
 import "fmt"
 
 type Board struct {
-	board [8][8]GamePiece
+	board [8][8]Mover
 }
 
 func (b *Board) initBoard() {
-	b.board = [8][8]GamePiece{
-		{},
-		{},
-		{},
-		{},
-		{},
-		{},
-		{},
-		{},
+	for i := 0; i < 8; i++ {
+		//white pawns
+		var temp Pawn
+		temp.GamePiece.Icon = WHITE_PAWN
+		temp.GamePiece.IsWhite = true
+		temp.GamePiece.Pos = Coord{x: i, y: 1}
+		temp.IsFirst = true
+
+		b.board[i][1] = temp
 	}
 }
 func (b *Board) Print() {
@@ -26,7 +26,7 @@ func (b *Board) Print() {
 		fmt.Print(i)
 		fmt.Print("|")
 		for j := 0; j < 8; j++ {
-			icon := b.board[i][j].Icon
+			icon := b.board[i][j].getIcon()
 			if icon == "" {
 				icon = " "
 			}
