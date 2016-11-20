@@ -10,7 +10,7 @@ const BLACK_BISHOP = "♝"
 
 const BLACK_KNIGHT = "♞"
 
-const BLACK_PAWN = "♕"
+const BLACK_PAWN = "♟"
 
 const WHITE_KING = "♔"
 
